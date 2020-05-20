@@ -20,6 +20,7 @@ __create() {
         #--zone "${zone}" \
         #--node-locations "${region}-a,${region}-b,${region}-c"
         #--num-nodes "1" for regional/multi-zone cluster, this is the number in each zone
+    gcloud config set project $project_id 
     gcloud beta container \
         --project "${project_id}" clusters create "$cluster_name" \
         --region "${region}" \
